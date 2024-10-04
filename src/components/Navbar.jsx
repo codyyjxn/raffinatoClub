@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ toggleCart }) {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -16,7 +16,11 @@ export default function Navbar() {
           href="/"
           className="block cursor-pointer h-6 text-lg uppercase leading-6 tracking-widest text-black hover:text-slate-400"
         >
-         <img src="/assets/raffinato.jpg" alt="raffinato logo" className="h-12 md:h-10 mr-2 pb-1 w-full" />
+          <img
+            src="/assets/raffinato.jpg"
+            alt="raffinato logo"
+            className="h-12 md:h-10 mr-2 pb-1 w-full"
+          />
         </a>
       </div>
 
@@ -60,29 +64,29 @@ export default function Navbar() {
         )}
       </button>
 
-      {/* Navbar Items for Desktop */}
-      <div className="hidden md:flex md:w-auto">
+      {/* -------------------- Navbar Items for Desktop --------------*/}
+      <div className="hidden md:flex md:w-full px-10">
         <ul className="flex space-x-8">
           <li>
             <a
               href="/products"
-              className="block cursor-pointer py-4 text-xs uppercase leading-6 tracking-widest text-black hover:text-slate-400"
+              className="block cursor-pointer py-4 text-xs uppercase leading-6 tracking-widest text-black hover:text-slate-400 transition duration-300 ease-in-out transform hover:-translate-y-2"
             >
               Shop
             </a>
           </li>
           <li>
             <a
-              href="/orders"
-              className="block cursor-pointer py-4 text-xs uppercase leading-6 tracking-widest text-black hover:text-slate-400"
+              href="/Contacts"
+              className="block cursor-pointer py-4 text-xs uppercase leading-6 tracking-widest text-black hover:text-slate-400 transition duration-300 ease-in-out transform hover:-translate-y-2"
             >
               Contact Us
             </a>
           </li>
           <li>
             <a
-              href="/cart"
-              className="block cursor-pointer py-4 text-xs uppercase leading-6 tracking-widest text-black hover:text-slate-400"
+              onClick={toggleCart}
+              className="block cursor-pointer py-4 text-xs uppercase leading-6 tracking-widest text-black hover:text-slate-400 transition duration-300 ease-in-out transform hover:-translate-y-2"
             >
               Bag
             </a>
@@ -90,26 +94,28 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Mobile Navbar // hamburger menu*/}
-      <div className={`md:hidden absolute right-0 top-full transition-all duration-300 ease-in-out justify-between max-h-screen${
+      {/*---------------- Mobile Navbar // hamburger menu-------------*/}
+      <div
+        className={`md:hidden absolute right-0 top-full transition-all duration-300 ease-in-out justify-between max-h-screen${
           isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        } overflow-hidden bg-white shadow-md border border-gray-300 rounded-xl p-6`}>
+        } overflow-hidden bg-white shadow-md border border-gray-300 rounded-xl p-6`}
+      >
         <div className={`space-y-2 ${isMobileMenuOpen ? "block" : "hidden"}`}>
           <a
             href="/products"
-            className="text-black uppercase block rounded-md px-4 py-2 font-medium hover:bg-gray-100 transition duration-200" 
+            className="text-black uppercase block rounded-md px-4 py-2 font-medium hover:bg-gray-100 transition duration-200"
           >
             Shop
           </a>
           <a
-            href="/orders"
+            href="/Contacts"
             className="text-black uppercase block rounded-md px-4 py-2 font-medium hover:bg-gray-100 transition duration-200"
           >
             Contact Us
           </a>
           <a
-            href="/cart"
-            className="text-black uppercase block rounded-md px-4 py-2 font-medium hover:bg-gray-100 transition duration-200"
+            onClick={toggleCart}
+            className="text-black uppercase block rounded-md px-4 py-2 font-medium hover:bg-gray-100 transition duration-200 "
           >
             Bag
           </a>
