@@ -64,7 +64,7 @@ const ContactField = ({
     );
   };
 
-  return <div className="mb-4 relative">{renderInput()}</div>;
+  return <div className="mb-4 ">{renderInput()}</div>;
 };
 
 export default ContactField;

@@ -46,10 +46,10 @@ const Contacts = () => {
   const body = `Name: ${formData.name}\nEmail: ${formData.email}\nOrder Number: ${formData.orderNumber}\nMessage: ${formData.message} `;
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 pt-20 md:pt-28">
       <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
       {/* We need to create a form for our users when they try to contact us about a curtain item */}
-      <form onSubmit={handleSubmit} className="space-y-10">
+      <form onSubmit={handleSubmit} className="space-y-10 pt-24">
         <ContactField
           type="text"
           name="name"
@@ -124,10 +124,10 @@ const Contacts = () => {
           <p>Monday - Friday 8:00am - 4pm PST</p>
           <i>Excluding the weekend and major holidays.</i>
         </div>
-        <div>
-          <a>Instgram</a>
-          <a>TikTok</a>
-          <a>Twitter</a>
+        <div className="flex flex-col space-y-2">
+          <a className="underline" href="https://www.instagram.com/">Instgram</a>
+          <a className="underline" href="https://www.tiktok.com/">TikTok</a>
+          <a className="underline" href="https://x.com/">X</a>
         </div>
       </div>
     </div>

@@ -8,9 +8,9 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Products from "./Pages/Products";
 import { useState } from "react";
-import products from "./Data/products";
 import Cart from "./components/Cart";
 import Contacts from "./Pages/Contacts";
+import './firebaseConfig'
 
 // Create a separate component for rendering the logo only on the home page
 function HomeLogo() {

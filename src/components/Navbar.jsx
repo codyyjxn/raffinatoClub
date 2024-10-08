@@ -96,7 +96,7 @@ export default function Navbar({ toggleCart }) {
 
       {/*---------------- Mobile Navbar // hamburger menu-------------*/}
       <div
-        className={`md:hidden absolute right-0 top-full transition-all duration-300 ease-in-out justify-between max-h-screen${
+        className={`md:hidden absolute right-0 top-full transition-all duration-300 ease-in-out justify-between max-h-screen ${
           isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden bg-white shadow-md border border-gray-300 rounded-xl p-6`}
       >
